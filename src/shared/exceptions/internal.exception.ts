@@ -1,4 +1,4 @@
-import { BaseException } from "./base-exception.exception"
+import { BaseException } from './base-exception.exception'
 
 interface InternalExceptionProps {
   id?: string
@@ -6,7 +6,7 @@ interface InternalExceptionProps {
 }
 
 export class InternalException extends BaseException {
-  constructor({ id = "internal", message }: InternalExceptionProps) {
+  constructor({ id = 'internal', message }: InternalExceptionProps) {
     super({ id, message, status: 500 })
   }
 }

@@ -1,4 +1,4 @@
-import { BaseException } from "./base-exception.exception"
+import { BaseException } from './base-exception.exception'
 
 export interface HttpFieldValidationPayload {
   field: string
@@ -14,9 +14,9 @@ export class HttpFieldValidationException extends BaseException {
 
   constructor({ fields }: HttpFieldValidationExceptionProps) {
     super({
-      id: "http-field-validation",
-      message: "Validation failed",
-      status: 400,
+      id: 'http-field-validation',
+      message: 'Validation failed',
+      status: 400
     })
 
     this.fields = fields
