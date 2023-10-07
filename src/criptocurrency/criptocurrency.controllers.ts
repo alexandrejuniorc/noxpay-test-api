@@ -5,15 +5,14 @@ import { updateCriptocurrencyVotes } from './services/update-criptocurrency-vote
 export const criptoCurrencyController = {
   listAllCriptoCurrencies: async (request: Request, response: Response) => {
     const criptoCurrencies = await listAllCriptoCurrenciesService()
-
     return response.status(200).json(criptoCurrencies)
   },
 
   updateCriptocurrencyVotes: async (request: Request, response: Response) => {
     const { id } = request.params
     const { vote } = request.body
-    const criptoCurrency = await updateCriptocurrencyVotes(id, vote)
-
+    const params = { id, vote }
+    const criptoCurrency = await updateCriptocurrencyVotes(params)
     return response.status(200).json(criptoCurrency)
   }
 }

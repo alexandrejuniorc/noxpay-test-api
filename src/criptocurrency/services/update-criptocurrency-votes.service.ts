@@ -1,7 +1,8 @@
 import { prisma } from '../../shared/database/prisma'
 import { InternalException } from '../../shared/exceptions/internal.exception'
+import { UpdateCriptocurrencyVotesSchemaDto } from '../dto/update-criptocurrency-votes.dto'
 
-export async function updateCriptocurrencyVotes(id: string, vote: number) {
+export async function updateCriptocurrencyVotes({ id, vote }: UpdateCriptocurrencyVotesSchemaDto) {
   const criptoCurrency = await prisma.criptoCurrency.findUnique({
     where: { id }
   })

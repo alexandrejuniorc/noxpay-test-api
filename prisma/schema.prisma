@@ -9,12 +9,6 @@ datasource db {
 
 model CriptoCurrency {
   id    String @id @default(uuid())
-  names String
-  votes Int
-}
-
-model new_CriptoCurrency {
-  id    String @id
   name  String
   votes Int
 }
