@@ -3,3 +3,13 @@
 # @name list_all_criptocurrencies
 GET {{baseUrl}}/cryptocurrency/
 Content-Type: application/json
+
+###
+
+# @name update_criptocurrencies_votes
+PUT {{baseUrl}}/cryptocurrency/1d821719-3b02-452a-b4dd-c9055557ea2d/vote
+Content-Type: application/json
+
+{
+  "vote": 1
+}
