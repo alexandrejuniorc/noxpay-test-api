@@ -8,14 +8,14 @@ export const criptoCurrencyController = {
     const criptoCurrencies = await listAllCriptoCurrenciesService()
     return response.status(200).json(criptoCurrencies)
   },
-  updateCriptocurrencyVotes: async (request: Request, response: Response) => {
+  updateCriptoCurrencyVotes: async (request: Request, response: Response) => {
     const { id } = request.params
     const { vote } = request.body
     const params = { id, vote }
     const criptoCurrency = await updateCriptocurrencyVotes(params)
     return response.status(200).json(criptoCurrency)
   },
-  createCriptocurrency: async (request: Request, response: Response) => {
+  createCriptoCurrency: async (request: Request, response: Response) => {
     const { name } = request.body
     const params = { name, votes: 0 }
     const criptoCurrency = await createCriptocurrency(params)

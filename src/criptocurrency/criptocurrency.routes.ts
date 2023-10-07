@@ -8,11 +8,11 @@ export const criptoCurrencyRouter = Router()
 criptoCurrencyRouter.post(
   '/',
   CreateCriptoCurrencyValidatorMiddleware,
-  criptoCurrencyController.createCriptocurrency
+  criptoCurrencyController.createCriptoCurrency
 )
 criptoCurrencyRouter.get('/', criptoCurrencyController.listAllCriptoCurrencies)
 criptoCurrencyRouter.put(
   '/:id/vote',
   UpdateCriptoCurrencyVotesValidatorMiddleware,
-  criptoCurrencyController.updateCriptocurrencyVotes
+  criptoCurrencyController.updateCriptoCurrencyVotes
 )
