@@ -1,9 +1,9 @@
-import { prisma } from '../../shared/database/prisma'
 import { InternalException } from '../../shared/exceptions/internal.exception'
+import { criptoCurrencyRepository } from '../criptocurrency.repositories'
 import { UpdateCriptocurrencyVotesSchemaDto } from '../dto/update-criptocurrency-votes.dto'
 
 export async function updateCriptocurrencyVotes({ id, vote }: UpdateCriptocurrencyVotesSchemaDto) {
-  const criptoCurrency = await prisma.criptoCurrency.findUnique({
+  const criptoCurrency = await criptoCurrencyRepository.findUnique({
     where: { id }
   })
 
@@ -14,7 +14,7 @@ export async function updateCriptocurrencyVotes({ id, vote }: UpdateCriptocurren
     })
   }
 
-  return prisma.criptoCurrency.update({
+  return criptoCurrencyRepository.update({
     where: { id },
     data: { votes: criptoCurrency.votes + vote }
   })

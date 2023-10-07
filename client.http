@@ -1,7 +1,7 @@
 @baseUrl = http://localhost:3000
 
 # @name list_all_criptocurrencies
-GET {{baseUrl}}/cryptocurrency/
+GET {{baseUrl}}/cryptocurrency
 Content-Type: application/json
 
 ###
@@ -13,3 +13,14 @@ Content-Type: application/json
 {
   "vote": 1
 }
+
+###
+
+# @name create_criptocurrency
+POST {{baseUrl}}/cryptocurrency
+Content-Type: application/json
+
+{
+  "name": "teste"
+}
+

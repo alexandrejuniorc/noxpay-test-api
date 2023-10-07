@@ -1,6 +1,6 @@
-import { prisma } from '../../shared/database/prisma'
+import { criptoCurrencyRepository } from '../criptocurrency.repositories'
 
 export async function listAllCriptoCurrenciesService() {
-  const criptoCurrencies = await prisma.criptoCurrency.findMany()
+  const criptoCurrencies = await criptoCurrencyRepository.findMany({})
   return criptoCurrencies
 }
