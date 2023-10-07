@@ -12,6 +12,6 @@ datasource db {
 
 model CriptoCurrency {
   id    String @id @default(uuid())
-  names String
+  name  String
   votes Int
 }

@@ -1,0 +1,5 @@
+@baseUrl = http://localhost:3000
+
+# @name list_all_criptocurrencies
+GET {{baseUrl}}/cryptocurrency/
+Content-Type: application/json

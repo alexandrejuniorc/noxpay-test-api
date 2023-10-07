@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src",
+        ".env",
+        "locales"
+    ],
+    "ext": "ts",
+    "exec": "env-cmd vite-node ./src/server.ts"
+}
