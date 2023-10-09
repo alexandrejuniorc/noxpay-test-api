@@ -3,7 +3,7 @@ import { z } from 'zod'
 const envSchema = z.object({
   PORT: z
     .string()
-    .default('3000')
+    .default('3333')
     .transform(value => Number(value))
 })
 

@@ -1,12 +1,12 @@
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:3333
 
-# @name list_all_criptocurrencies
+# @name list_all_cryptocurrencies
 GET {{baseUrl}}/cryptocurrency
 Content-Type: application/json
 
 ###
 
-# @name update_criptocurrencies_votes
+# @name update_cryptocurrency_votes
 PUT {{baseUrl}}/cryptocurrency/1d821719-3b02-452a-b4dd-c9055557ea2d/vote
 Content-Type: application/json
 
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-# @name create_criptocurrency
+# @name create_cryptocurrencies
 POST {{baseUrl}}/cryptocurrency
 Content-Type: application/json
 
