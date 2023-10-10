@@ -1,12 +1,21 @@
 import { Request, Response } from 'express'
+import { ListAllCriptocurrenciesFiltersDto } from './dto/list-all-criptocurrencies.dto'
 import { createCriptocurrency } from './services/create-criptocurrency.service'
 import { listAllCriptoCurrenciesService } from './services/list-all-criptocurrencies.service'
 import { updateCriptocurrencyVotes } from './services/update-criptocurrency-votes.service'
+import { validatePaginationQuery } from './validators/validate-pagination-query.validator'
 
 export const criptoCurrencyController = {
   listAllCriptoCurrencies: async (request: Request, response: Response) => {
-    const criptoCurrencies = await listAllCriptoCurrenciesService()
-    return response.status(200).json(criptoCurrencies)
+    const paginationQuery = validatePaginationQuery(request)
+    const { count, maxPages, results } = await listAllCriptoCurrenciesService(
+      request.query as unknown as ListAllCriptocurrenciesFiltersDto,
+      paginationQuery
+    )
+
+    response.setHeader('Count', count)
+    response.setHeader('Max-Pages', maxPages)
+    return response.status(200).json(results)
   },
   updateCriptoCurrencyVotes: async (request: Request, response: Response) => {
     const { id } = request.params

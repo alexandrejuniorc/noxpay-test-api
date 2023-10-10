@@ -13,5 +13,8 @@ export const criptoCurrencyRepository = {
   },
   async findUnique(args: Prisma.CriptoCurrencyFindUniqueArgs) {
     return await prisma.criptoCurrency.findUnique(args)
+  },
+  async countGroup(where: Prisma.CriptoCurrencyFindManyArgs['where']) {
+    return await prisma.criptoCurrency.count({ where })
   }
 }
