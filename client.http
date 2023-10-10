@@ -1,5 +1,5 @@
-@baseUrl = http://localhost:3333
 # @baseUrl = https://noxpay.onrender.com
+@baseUrl = http://localhost:3333
 @cryptoId = e5eef93a-40f0-40b2-883d-c01e720b107c
 # @name list_all_cryptocurrencies
 GET {{baseUrl}}/cryptocurrency
