@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@cryptoId = "ff4157bb-4932-4384-a165-1dd13db1a855"
+@cryptoId = e5eef93a-40f0-40b2-883d-c01e720b107c
 # @name list_all_cryptocurrencies
 GET {{baseUrl}}/cryptocurrency
 Content-Type: application/json
@@ -10,10 +10,6 @@ Content-Type: application/json
 PUT {{baseUrl}}/cryptocurrency/{{cryptoId}}/vote
 Content-Type: application/json
 
-{
-  "vote": 1
-}
-
 ###
 
 # @name create_cryptocurrencies
@@ -21,6 +17,6 @@ POST {{baseUrl}}/cryptocurrency
 Content-Type: application/json
 
 {
-  "name": "teste"
+  "name": "bitcoin"
 }
 

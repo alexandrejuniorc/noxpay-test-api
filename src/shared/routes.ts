@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { criptoCurrencyRouter } from '../criptocurrency/criptocurrency.routes'
+import { cryptocurrencyRouter } from '../cryptocurrency/cryptocurrency.routes'
 
 export const router = Router()
 
-router.use('/cryptocurrency', criptoCurrencyRouter)
+router.use('/cryptocurrency', cryptocurrencyRouter)
