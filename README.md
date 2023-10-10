@@ -9,7 +9,12 @@ pnpm install
 pnpm husky:prepare
 ```
 
-Second, run the development server:
+Second, you need to use docker-compose to run database:
+```bash
+docker-compose up -d
+```
+
+Third, run the development server:
 ```bash
 pnpm dev
 ```
