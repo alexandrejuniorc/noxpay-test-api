@@ -26,7 +26,7 @@ export const criptoCurrencyController = {
   },
   createCriptoCurrency: async (request: Request, response: Response) => {
     const { name } = request.body
-    const params = { name, votes: 0 }
+    const params = { name, price: 0, votes: 0 }
     const criptoCurrency = await createCriptocurrency(params)
     return response.status(201).json(criptoCurrency)
   }

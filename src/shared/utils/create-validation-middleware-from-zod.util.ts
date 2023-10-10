@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from 'express'
 import { ZodSchema } from 'zod'
 
 import { HttpFieldValidationException } from '../exceptions/http-field-validation.exception'
-import { logger } from './logger.util'
 
 export function createValidationMiddlewareFromZod(zodSchema: ZodSchema) {
   return (request: Request, _: Response, next: NextFunction) => {
@@ -16,7 +15,7 @@ export function createValidationMiddlewareFromZod(zodSchema: ZodSchema) {
         message: zodError.message
       }))
 
-      logger.error(fields)
+      console.error(fields)
 
       throw new HttpFieldValidationException({ fields })
     }

@@ -3,10 +3,9 @@ import { NextFunction, Request, Response } from 'express'
 
 import { BaseException } from '../exceptions/base-exception.exception'
 import { HttpFieldValidationException } from '../exceptions/http-field-validation.exception'
-import { logger } from '../utils/logger.util'
 
 export function errorHandler(error: Error, request: Request, response: Response, next: NextFunction) {
-  logger.error(error)
+  console.error(error)
 
   if (error instanceof BaseException) {
     if (error instanceof HttpFieldValidationException) {
@@ -22,7 +21,7 @@ export function errorHandler(error: Error, request: Request, response: Response,
   }
 
   if (error instanceof AxiosError) {
-    logger.error(error.response?.data)
+    console.error(error.response?.data)
 
     return response.status(error.response?.status || 500).json({
       id: 'axios-error',
